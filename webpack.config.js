@@ -30,18 +30,26 @@ const config = {
     libraryTarget: 'var'
     // libraryTarget: "commonjs2"
   },
-  target: 'node',
+  target: 'web',
   module: {
     rules: [
       {
         test: /\.ts$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: ['ts-loader', '@auto.pro/webpack-loader']
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader', '@auto.pro/webpack-loader']
+        // exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          },
+          '@auto.pro/webpack-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
