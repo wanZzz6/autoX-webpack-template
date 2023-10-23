@@ -48,7 +48,7 @@ const config = {
               presets: ['@babel/preset-env']
             }
           },
-          '@auto.pro/webpack-loader'
+          'webpack-autojs-loader'
         ]
       },
       {
