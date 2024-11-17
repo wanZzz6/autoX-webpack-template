@@ -1,5 +1,4 @@
-const { loadText } = require('./utils');
-
+const {loadText} = require('./utils');
 
 function show(hello, world = 'world') {
   return `${hello},${world}!`;
@@ -8,12 +7,12 @@ function show(hello, world = 'world') {
 const hello = loadText();
 const result = show(hello);
 
-ui.layout(`
-    <vertical>
-        <button id="btn1" text="${result}" />
-        <button id="btn2" text="${hello}" />
-    </vertical>
-`);
+ui.layout(
+  <vertical>
+    <button id="btn1" text="${result}" />
+    <button id="btn2" text="${hello}" />
+  </vertical>
+);
 
 ui.btn1.on('click', () => {
   toastLog(result);

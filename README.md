@@ -37,7 +37,9 @@ const config = {
 - UI 模式  
     如果需要使用 UI 模式，需要在`webpack.config.js -> compilePlugin -> ui`数组里指定，文件名应与出口文件名一致。  
     如，上方示例的出口文件名为`app`，则在`ui`数组里填`app`即可将其设为 UI 模式。
+    > 注意：编写UI布局代码时，如需在xml标签内使用模板字符串`${xxx}`语法，请不要在外层加反引号，此项目模板中配置了-`webpack-autojs-loader`会自动处理xml标签以及`${{}}`模板语法，具体可参考index.js.
 
+- 静态文件
 - AES 加密  
     为了保证热更新的文件传输安全，常常需要使用 AES 加密源码，在`webpack.config.js -> compilePlugin`里设置`encode: {key: 16位密钥}`就会将出口文件以`AES/ECB/PKCS7padding`方式进行加密，解密时可参考以下代码
 
